@@ -1,5 +1,5 @@
-/** @type { import('@storybook/react-webpack5').StorybookConfig } */
-const config = {
+// Storybookの設定（CommonJS形式）
+module.exports = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
   addons: [
     "@storybook/addon-links",
@@ -8,12 +8,14 @@ const config = {
     "@storybook/addon-interactions",
   ],
   framework: {
-    name: "@storybook/react-webpack5",
+    name: "@storybook/react-webpack5", // React Webpack 5を使用
     options: {},
   },
   docs: {
-    autodocs: "tag",
+    autodocs: "tag", // 自動ドキュメントをタグで管理
   },
-  staticDirs: ["../public"],
+  staticDirs: ["../public"], // 静的ファイルの配置
+  core: {
+    builder: 'webpack5', // Webpack5を使用
+  },
 };
-export default config;

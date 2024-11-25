@@ -20,8 +20,7 @@ const fetchWeather = async ({ params }) => {
   // await sleep(2000);
   const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${params.city}&lang=ja&appid=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`);
   if (res.ok) { return res; }
-  // return json({
-  return res.json({
+  return json({
     "weather":[
       {"id":803,"main":"Unknown","description":"不明","icon":"50d"}
     ],
